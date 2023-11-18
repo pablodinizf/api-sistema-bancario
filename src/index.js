@@ -1,5 +1,6 @@
-const express = require('express');
-const rotas = require('./roteador');
+require("dotenv/config");
+const express = require("express");
+const rotas = require("./roteador");
 
 const app = express();
 
@@ -7,4 +8,6 @@ app.use(express.json());
 
 app.use(rotas);
 
-app.listen(3000);
+const PORT = process.env.PORT ?? 3000;
+
+app.listen(PORT);
